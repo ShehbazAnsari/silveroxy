@@ -1,0 +1,164 @@
+/* CSS: styles.css */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Background image styling for the first section */
+.bg-image {
+  background-image: url("../images/SilverOxy\ Logo.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Add padding to the first section to avoid content being hidden under the navbar */
+/* Ensure the first section doesn't get hidden under the navbar */
+#home {
+  padding-top: 80px; /* Adjust this based on your navbar height */
+  height: 100vh; /* Ensure the first section takes full viewport height */
+  overflow: hidden;
+}
+
+/* Navbar adjustments */
+.navbar {
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.nav-link {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #04058a;
+}
+
+/* Add padding for other sections to account for the navbar height */
+section {
+  padding-top: 80px; /* Adjust this based on your navbar height */
+}
+
+/* Footer Section - Cool and Sexy Water-Themed Design */
+footer {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 119, 190, 0.8),
+    rgba(255, 255, 255, 0.9)
+  );
+  color: #ffffff;
+  padding: 2rem 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/water-splash.png") no-repeat center/cover;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+footer h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  z-index: 2;
+  position: relative;
+}
+
+footer p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  z-index: 2;
+  position: relative;
+}
+
+footer a {
+  color: #0077be;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 2;
+  position: relative;
+}
+
+footer a:hover {
+  color: #ffffff;
+  text-shadow: 0px 0px 5px #0077be;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  z-index: 2;
+  position: relative;
+}
+
+footer .social-icons a {
+  font-size: 1.5rem;
+  color: #ffffff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #0077be;
+  transform: scale(1.2);
+}
+
+footer .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("../images/wave.svg") repeat-x;
+  animation: wave-animation 6s infinite linear;
+  z-index: 0;
+}
+
+@keyframes wave-animation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Product Card Styles */
+.card {
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.card-text {
+  font-size: 1.2rem;
+}
+
+/* Button Styles */
+.btn-outline-primary,
+.btn-outline-info,
+.btn-outline-danger {
+  font-weight: bold;
+}
