@@ -136,7 +136,7 @@ footer .wave {
   }
 }
 
-/* Product Card Styles */
+/* Product Card Styles
 .card {
   border: 1px solid #ddd;
   margin-bottom: 20px;
@@ -154,11 +154,81 @@ footer .wave {
 
 .card-text {
   font-size: 1.2rem;
-}
+} */
 
 /* Button Styles */
 .btn-outline-primary,
 .btn-outline-info,
 .btn-outline-danger {
   font-weight: bold;
+}
+/* Contact Section Styles */
+#contact {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #04058a;
+}
+
+#contact p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Card Styles */
+.card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 250px; /* Uniform height for all cards */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-text a {
+  color: #04058a;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.card-text a:hover {
+  color: #ff5722;
+}
+
+/* Mobile Card Specific Styling */
+.card.bg-primary {
+  background: linear-gradient(to bottom, #0077be, #04058a);
+  color: #ffffff;
+}
+
+.card.bg-primary .card-title {
+  color: #ffffff;
+}
+
+.card.bg-primary:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(4, 5, 138, 0.5);
+}
+
+/* Icon Styles */
+.card i {
+  margin-top: 10px;
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.card:hover i {
+  transform: rotate(15deg);
 }
