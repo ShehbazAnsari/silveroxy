@@ -158,20 +158,67 @@ section {
 .card {
   border: 1px solid #ddd;
   margin-bottom: 20px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+    to bottom right,
+    #0077be,
+    #00c6ff
+  ); /* Gradient background */
+  height: 350px; /* Fixed height for both cards */
+  width: 100%; /* Ensure the cards take full width of the container */
 }
 
 .card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
 }
 
 .card-title {
   font-size: 1.5rem;
+  color: #ffffff; /* White text for card title */
 }
 
 .card-text {
   font-size: 1.2rem;
+  color: #ffffff; /* White text for card description */
+}
+
+/* Ensure equal size and width for both cards */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .card {
+    height: 300px; /* Adjust height for medium screens */
+  }
+
+  .card-title {
+    font-size: 1.3rem; /* Slightly smaller title on mobile */
+  }
+
+  .card-text {
+    font-size: 1rem; /* Smaller text for mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    height: 250px; /* Further reduce height for small screens */
+  }
+
+  .card-title {
+    font-size: 1.2rem; /* Further reduce title size for very small screens */
+  }
+
+  .card-text {
+    font-size: 0.9rem; /* Further reduce text size for very small screens */
+  }
 }
 
 /* Button Styles */
