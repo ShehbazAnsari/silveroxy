@@ -30,50 +30,38 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav
-      class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm"
-      style="background: linear-gradient(to right, #0077be, #00c6ff)"
-    >
-      <div class="container">
-        <!-- Logo -->
-        <a class="navbar-brand" href="#">
-          <img
-            src="images/SilverOxy Logo.jpg"
-            alt="Silver Oxy Logo"
-            style="height: 50px; width: auto"
-          />
-        </a>
-        <!-- Navbar Toggler -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Navbar Links -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#about">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#products">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background: transparent;">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="images/SilverOxy Logo.jpg" alt="Silver Oxy Logo" style="height: 50px; width: auto" />
+    </a>
+    <!-- Navbar Toggler -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#products">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
 
     <!-- Home Section -->
 <section
@@ -81,52 +69,71 @@
   class="text-center text-white d-flex align-items-center justify-content-center position-relative"
 >
   <div>
-    <h1 class="animate__animated animate__fadeIn text-primary">
+    <!-- <h1 class="animate__animated animate__fadeIn text-primary">
       Silver Oxy
-    </h1>
+    </h1> -->
+    <img
+      src="images/SilverOxy Logo.jpg" 
+      alt="Silver Oxy Logo"
+      class="animate__animated animate__fadeIn mb-4"
+      style="max-height: 300px; width: auto; display: block; margin: 0 auto;"
+    />
     <h1
-      class="animate__animated animate__fadeIn animate__delay-1s text-primary"
-    >
-      "Drink Silver, Feel The Oxy."
-    </h1>
-    <p
-      class="animate__animated animate__fadeIn animate__delay-2s text-primary"
-    >
-      Pure, refreshing, and high-quality packaged drinking water for all
-      your needs.
-    </p>
-    <a
-      href="#about"
-      class="btn btn-outline-primary animate__animated animate__fadeIn animate__delay-3s"
-      >Learn More</a
-    >
+  class="animate__animated animate__fadeIn animate__delay-1s text-primary-custom"
+>
+  "Drink Silver, Feel The Oxy."
+</h1>
+<p
+  class="animate__animated animate__fadeIn animate__delay-2s text-primary-custom"
+>
+  Pure, refreshing, and high-quality packaged drinking water for all
+  your needs.
+</p>
+<a
+  href="#about"
+  class="btn btn-outline-primary animate__animated animate__fadeIn animate__delay-3s btn-outline-custom"
+>
+  Learn More
+</a>
+
   </div>
 
   <!-- Water Splash Effect -->
-  <div class="home-wave">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path
-            fill="#04058a"
-            fill-opacity="1"
-            d="M0,64L30,85.3C60,107,120,149,180,176C240,203,300,213,360,213.3C420,213,480,203,540,181.3C600,160,660,128,720,112C780,96,840,96,900,112C960,128,1020,160,1080,186.7C1140,213,1200,235,1260,224C1320,213,1380,171,1410,149.3L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
-          ></path>
-    </svg>
-  </div>
+<div class="home-wave">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <!-- Define the linear gradient -->
+    <defs>
+      <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color: rgba(0, 119, 190, 0.8); stop-opacity: 1" />
+        <stop offset="100%" style="stop-color: rgba(255, 255, 255, 0.9); stop-opacity: 1" />
+      </linearGradient>
+    </defs>
+
+    <!-- Apply the gradient to the path -->
+    <path
+      fill="url(#waveGradient)"
+      d="M0,64L30,85.3C60,107,120,149,180,176C240,203,300,213,360,213.3C420,213,480,203,540,181.3C600,160,660,128,720,112C780,96,840,96,900,112C960,128,1020,160,1080,186.7C1140,213,1200,235,1260,224C1320,213,1380,171,1410,149.3L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+    ></path>
+  </svg>
+</div>
+
 </section>
 
 
 
-    <!-- About Section -->
-    <section id="about" class="p-5 bg-light text-center" data-aos="fade-up">
-      <div class="container">
-        <h2>About Silver Oxy</h2>
-        <p>
-          At Silver Oxy, we provide clean and refreshing drinking water in 1L
-          and 500ml sizes. Our eco-friendly packaging ensures a healthier planet
-          while keeping you hydrated.
-        </p>
-      </div>
-    </section>
+  <!-- About Section -->
+<section id="about" class="p-5 bg-light text-center" data-aos="fade-up">
+  <div class="container">
+    <h2>About Silver Oxy</h2>
+    <p>
+      At Silver Oxy, we provide clean and refreshing drinking water in 1L
+      and 500ml sizes. Our eco-friendly packaging ensures a healthier planet
+      while keeping you hydrated.
+    </p>
+  </div>
+  <!-- Water Splash Wave -->
+  <div class="water-wave"></div>
+</section>
 
     <!-- Products Section -->
     <section

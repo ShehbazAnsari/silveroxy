@@ -4,7 +4,9 @@
 html {
   scroll-behavior: smooth;
 }
-
+body {
+  color: #04058a;
+}
 /* Background image styling for the first section */
 .bg-image {
   background-image: url("../images/SilverOxy\ Logo.jpg");
@@ -51,7 +53,7 @@ html {
 /* Optional: For smaller screens, adjust the wave height */
 @media (max-width: 768px) {
   .home-wave {
-    height: 15vh; /* Adjust wave height for medium-sized screens */
+    height: 25vh; /* Adjust wave height for medium-sized screens */
   }
 }
 
@@ -112,16 +114,38 @@ html {
 }
 
 /* Navbar adjustments */
+/* Navbar adjustments */
 .navbar {
   transition: all 0.3s ease-in-out;
   z-index: 1000;
+  background: transparent !important; /* Transparent navbar */
+  box-shadow: none; /* Remove any shadow for a cleaner look */
 }
 
+/* Navbar Links */
 .nav-link {
-  color: #fff;
+  color: #04058a;
   transition: color 0.3s ease;
+  font-weight: bold;
 }
+
+/* Navbar Link Hover Effect */
 .nav-link:hover {
+  color: #060648; /* Change text color on hover */
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+  border: none;
+  background: transparent; /* Transparent background for the toggler */
+}
+
+.navbar-toggler-icon {
+  background-color: #fff; /* White icon for toggler */
+}
+
+/* Active state for navbar links */
+.nav-link.active {
   color: #04058a;
 }
 
@@ -382,4 +406,57 @@ footer .wave {
 
 hr.border-light {
   border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Custom text color for the home section */
+.text-primary-custom {
+  color: #04058a !important;
+}
+
+/* Button custom color */
+.btn-outline-custom {
+  color: #04058a;
+  border-color: #04058a;
+}
+
+.btn-outline-custom:hover {
+  background-color: #04058a;
+  color: #fff;
+}
+/* About Section Styling */
+#about {
+  position: relative;
+  background-color: #f8f9fa; /* Light background color */
+  padding: 5rem 0; /* Add padding for spacing */
+  text-align: center;
+  overflow: hidden; /* Hide any overflow */
+}
+
+/* Water Splash Wave Effect */
+.water-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Adjust height of the wave */
+  background: linear-gradient(
+    to right,
+    rgba(0, 119, 190, 0.6),
+    rgba(255, 255, 255, 0.5)
+  );
+  border-radius: 50% 50% 0 0; /* Rounded top for a wave effect */
+  z-index: -1; /* Keep it behind the content */
+}
+
+/* Optional: Make the wave responsive */
+@media (max-width: 768px) {
+  .water-wave {
+    height: 60px; /* Reduce wave height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .water-wave {
+    height: 50px; /* Further reduce wave height for very small screens */
+  }
 }
