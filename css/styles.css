@@ -154,73 +154,6 @@ section {
   padding-top: 80px; /* Adjust this based on your navbar height */
 }
 
-/* Product Card Styles */
-.card {
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(
-    to bottom right,
-    #0077be,
-    #00c6ff
-  ); /* Gradient background */
-  height: 350px; /* Fixed height for both cards */
-  width: 100%; /* Ensure the cards take full width of the container */
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-}
-
-.card-title {
-  font-size: 1.5rem;
-  color: #ffffff; /* White text for card title */
-}
-
-.card-text {
-  font-size: 1.2rem;
-  color: #ffffff; /* White text for card description */
-}
-
-/* Ensure equal size and width for both cards */
-.product-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .card {
-    height: 300px; /* Adjust height for medium screens */
-  }
-
-  .card-title {
-    font-size: 1.3rem; /* Slightly smaller title on mobile */
-  }
-
-  .card-text {
-    font-size: 1rem; /* Smaller text for mobile */
-  }
-}
-
-@media (max-width: 576px) {
-  .card {
-    height: 250px; /* Further reduce height for small screens */
-  }
-
-  .card-title {
-    font-size: 1.2rem; /* Further reduce title size for very small screens */
-  }
-
-  .card-text {
-    font-size: 0.9rem; /* Further reduce text size for very small screens */
-  }
-}
-
 /* Button Styles */
 .btn-outline-primary,
 .btn-outline-info,
@@ -246,73 +179,67 @@ section {
 
 /* Card Styles */
 .card {
-  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
   border-radius: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-size: cover;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 119, 190, 0.8),
+    rgba(0, 119, 190, 0.5)
+  );
+  transform: rotate(45deg);
+  animation: wave 6s infinite linear;
+}
+
+@keyframes wave {
+  from {
+    transform: translateX(-50%) rotate(45deg);
+  }
+  to {
+    transform: translateX(50%) rotate(45deg);
+  }
+}
+
+.card-body {
+  position: relative;
+  z-index: 1;
 }
 
 .card-title {
-  font-size: 1.5rem;
   font-weight: bold;
+  color: #04058a;
+}
+
+.card-text {
+  color: #04058a;
 }
 
 .card-text a {
-  color: #04058a;
+  text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
+  color: #04058a;
 }
 
 .card-text a:hover {
-  color: #ff5722;
+  text-decoration: underline;
 }
 
-/* Specific Styling for Phone Card */
-.card.bg-primary {
-  background-color: #04058a !important;
-  color: #ffffff;
-}
-
-.card.bg-primary .card-title {
-  color: #ffffff;
-}
-
-.card.bg-primary:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 25px rgba(4, 5, 138, 0.5);
-}
-
-/* Icon Styles */
 .card i {
-  margin-top: 10px;
+  color: #04058a;
   font-size: 2rem;
-  transition: transform 0.3s ease;
 }
 
-.card:hover i {
-  transform: rotate(15deg);
-}
-
-/* Footer Styling */
-/* footer {
-  position: relative;
-} */
-
-/* .footer-wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  z-index: -1;
-  overflow: hidden;
-} */
-
-/* Footer Section - Cool and Sexy Water-Themed Design */
+/* /* Footer Section */
 footer {
   background: linear-gradient(
     to bottom,
@@ -505,5 +432,78 @@ hr.border-light {
 @media (max-width: 480px) {
   .water-wave {
     height: 50px; /* Further reduce wave height for very small screens */
+  }
+}
+
+/* Scoped Product Card Styles */
+.product-card-container .card {
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom right, #0077be, #00c6ff);
+  height: 350px; /* Fixed height for both cards */
+  width: 100%; /* Ensure the cards take full width of the container */
+}
+
+.product-card-container .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.product-card-container .card-title {
+  font-size: 1.5rem;
+  color: #ffffff; /* White text for card title */
+}
+
+.product-card-container .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+}
+
+.product-card-container .card-text {
+  font-size: 1.2rem;
+  color: #ffffff; /* White text for card description */
+}
+
+/* Ensure equal size and width for both cards */
+.product-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Responsive Adjustments for Product Cards */
+@media (max-width: 768px) {
+  .product-card-container .card {
+    height: 300px; /* Adjust height for medium screens */
+  }
+
+  .product-card-container .card-title {
+    font-size: 1.3rem; /* Slightly smaller title on mobile */
+  }
+
+  .product-card-container .card-text {
+    font-size: 1rem; /* Smaller text for mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  .product-card-container .card {
+    height: 250px; /* Further reduce height for small screens */
+  }
+
+  .product-card-container .card-title {
+    font-size: 1.2rem; /* Further reduce title size for very small screens */
+  }
+
+  .product-card-container .card-text {
+    font-size: 0.9rem; /* Further reduce text size for very small screens */
   }
 }
