@@ -88,21 +88,21 @@
       Silver Oxy
     </h1> -->
     <img
-      src="images/SilverOxy Logo.jpg" 
+      src="images/SilverOxy Logo.jpg"
       alt="Silver Oxy Logo"
-      class="animate__animated animate__fadeIn mb-4"
-      style="max-height: 300px; width: auto; display: block; margin: 0 auto;"
+      style="cursor: pointer; max-height: 300px; width: auto;"
+      data-bs-toggle="modal"
+      data-bs-target="#imageModal"
     />
     <h1
-  class="animate__animated animate__fadeIn animate__delay-1s text-primary-custom"
+  class="animate__animated animate__fadeIn animate__delay-1s text-primary-custom mt-2"
 >
   "Drink Silver, Feel The Oxy."
 </h1>
 <p
   class="animate__animated animate__fadeIn animate__delay-1s text-primary-custom"
 >
-  Pure, refreshing, and high-quality packaged drinking water for all
-  your needs.
+  Stay hydrated with pure, refreshing, and premium-quality packaged water that fits your lifestyle.
 </p>
 <a
   href="#about"
@@ -133,7 +133,26 @@
 </div>
 
 </section>
-
+<!-- Image Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-transparent border-0">
+      <button
+        type="button"
+        class="btn-close position-absolute end-0 me-3 mt-3"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+        style="z-index: 10;"
+      ></button>
+      <img
+        src="images/SilverOxy Logo.jpg"
+        alt="Silver Oxy Logo"
+        class="img-fluid rounded shadow"
+        style="max-height: 80vh;"
+      />
+    </div>
+  </div>
+</div>
 
 
   <!-- About Section -->
