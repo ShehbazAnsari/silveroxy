@@ -19,6 +19,91 @@ body {
 /* Add padding to the first section to avoid content being hidden under the navbar */
 /* Ensure the first section doesn't get hidden under the navbar */
 
+/* Fancy Navbar Button (Hamburger Menu) */
+.navbar-toggler {
+  border: none; /* Remove default border */
+  background-color: transparent; /* Make background transparent */
+  padding: 5px; /* Adjust padding */
+}
+
+.navbar-toggler-icon {
+  background-color: #04058a; /* Customize color */
+  border-radius: 50%;
+  width: 30px; /* Adjust width */
+  height: 3px; /* Adjust height */
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon:before,
+.navbar-toggler-icon:after {
+  content: "";
+  background-color: #04058a;
+  display: block;
+  width: 30px;
+  height: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Navbar Toggler Button Styling */
+.navbar-toggler {
+  border: 2px solid #04058a;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.navbar-toggler-icon {
+  background-color: #04058a;
+  width: 30px;
+  height: 3px;
+  border-radius: 2px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  background-color: #04058a;
+  display: block;
+  width: 30px;
+  height: 3px;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.navbar-toggler-icon::after {
+  top: 8px;
+}
+
+/* Wave Effect on Navbar Open */
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  animation: waveEffect 1s ease;
+}
+
+@keyframes waveEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Prevent Outline on Click */
+.navbar-toggler:focus {
+  outline: none;
+}
+
 /* Home Section */
 #home {
   padding-top: 80px; /* Adjust this based on your navbar height */
@@ -435,75 +520,79 @@ hr.border-light {
   }
 }
 
-/* Scoped Product Card Styles */
-.product-card-container .card {
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(to bottom right, #0077be, #00c6ff);
-  height: 350px; /* Fixed height for both cards */
-  width: 100%; /* Ensure the cards take full width of the container */
+/* Fancy container design with wave background */
+#products {
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    rgba(228, 236, 241, 0.8),
+    rgba(59, 174, 240, 0.5)
+  );
+  overflow: hidden;
 }
 
-.product-card-container .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-}
-
-.product-card-container .card-title {
-  font-size: 1.5rem;
-  color: #ffffff; /* White text for card title */
-}
-
-.product-card-container .card::before {
+#products::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%;
-  height: 200%;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: url("path/to/your/wave-pattern.png") no-repeat center center;
+  background-size: cover;
+  animation: waveAnimation 3s infinite linear;
+  z-index: 0;
 }
 
-.product-card-container .card-text {
-  font-size: 1.2rem;
-  color: #ffffff; /* White text for card description */
+.container {
+  position: relative;
+  z-index: 1;
 }
 
-/* Ensure equal size and width for both cards */
-.product-card-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+@keyframes waveAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Carousel styling */
+#productCarousel {
+  position: relative;
+  height: 500px;
+}
+
+.carousel-inner {
   height: 100%;
 }
 
-/* Responsive Adjustments for Product Cards */
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Adjusting the height on smaller screens */
 @media (max-width: 768px) {
-  .product-card-container .card {
-    height: 300px; /* Adjust height for medium screens */
-  }
-
-  .product-card-container .card-title {
-    font-size: 1.3rem; /* Slightly smaller title on mobile */
-  }
-
-  .product-card-container .card-text {
-    font-size: 1rem; /* Smaller text for mobile */
+  #productCarousel {
+    height: 300px;
   }
 }
 
-@media (max-width: 576px) {
-  .product-card-container .card {
-    height: 250px; /* Further reduce height for small screens */
+@media (min-width: 769px) {
+  #productCarousel {
+    height: 500px;
   }
+}
 
-  .product-card-container .card-title {
-    font-size: 1.2rem; /* Further reduce title size for very small screens */
-  }
-
-  .product-card-container .card-text {
-    font-size: 0.9rem; /* Further reduce text size for very small screens */
-  }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
 }
