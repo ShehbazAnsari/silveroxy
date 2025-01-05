@@ -27,6 +27,45 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css" />
+
+<!-- Styles -->
+<!-- <style>
+
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .video-mobile,
+  .video-desktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; Default: hidden
+  }
+
+  Display mobile video for small screens
+  @media (max-width: 768px) {
+    .video-mobile {
+      display: block;
+    }
+  }
+
+  Display desktop video for larger screens
+  @media (min-width: 769px) {
+    .video-desktop {
+      display: block;
+    }
+  }
+</style> -->
   </head>
   <body>
     <!-- Navbar -->
@@ -180,6 +219,30 @@ Today, Silver Oxy stands as a symbol of purity, trust, and dedication—a legacy
   <div class="water-wave"></div>
 </section>
 
+<!-- About Section -->
+<!-- <section id="about" class="p-5 bg-light text-center position-relative" data-aos="fade-up"> -->
+  <!-- About Content -->
+  <!-- <div class="container position-relative" style="z-index: 2;">
+    <h2 class="text-dark">About Silver Oxy</h2>
+    <p class="text-dark">
+      Founded in 2018, Silver Oxy began with a simple mission: to provide pure and refreshing water that you can trust. Over the years, we’ve grown into a trusted brand, recognized for our commitment to quality and innovation.
+
+      Our journey has been one of constant evolution. From our first bottle design in 2018 to our latest sleek and modern design in 2024, we’ve always prioritized both functionality and aesthetics. Our new label and bottle design reflect the growth of our brand and our dedication to meeting the highest standards of quality.
+
+      At Silver Oxy, we provide clean and refreshing drinking water in 1L and 500ml sizes. Our eco-friendly packaging ensures a healthier planet while keeping you hydrated.
+
+      The slogan, "Drink Silver, Feel The Oxy," perfectly encapsulates our promise to deliver purity and trust in every drop. This journey wouldn’t have been possible without the relentless efforts of Saleem Ansari, who worked tirelessly from scratch to lay the foundation of this brand, and Shehbaaz Ansari, who has passionately managed and driven the brand forward.
+
+      Today, Silver Oxy stands as a symbol of purity, trust, and dedication—a legacy built on hard work and innovation.
+    </p>
+  </div>
+ -->
+  <!-- Water Splash Wave -->
+  <!-- <div class="water-wave"></div>
+</section> -->
+
+
+
 <!-- Products Section -->
 <section
   id="products"
@@ -213,8 +276,14 @@ Today, Silver Oxy stands as a symbol of purity, trust, and dedication—a legacy
   <!-- Carousel for Background Images -->
   <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <!-- Slide 1 -->
       <div class="carousel-item active">
+        <video autoplay muted loop playsinline class="h-100 w-100">
+        <source src="/images/IMG_7542.mov" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      </div>
+      <!-- Slide 1 -->
+      <div class="carousel-item">
         <img
           src="images/IMG_7541.JPG"
           class="d-block w-100"
@@ -292,11 +361,13 @@ Today, Silver Oxy stands as a symbol of purity, trust, and dedication—a legacy
       data-aos="fade-up"
       data-aos-duration="1000"
     >
+    
       <div class="container">
         <h3 class="mb-4 text-primary-custom">Contact Us</h3>
         <p class="mb-4 text-primary-custom">
   If you have any questions or would like to learn more about our products, please don't hesitate to reach out. We are always here to assist you and would love the opportunity to connect with you and provide any information you may need.
 </p>
+
 
         <div class="row justify-content-center">
   <div class="row">
@@ -465,3 +536,18 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
     </script>
   </body>
 </html>
+
+<!-- Background Videos
+  <div class="video-container">
+    Mobile Video
+    <video autoplay muted loop playsinline class="video-mobile">
+      <source src="/images/Drink Silver Feel The Oxy.MP4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    Desktop Video
+    <video autoplay muted loop playsinline class="video-desktop">
+      <source src="/images/desktopVideo.MP4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div> -->
